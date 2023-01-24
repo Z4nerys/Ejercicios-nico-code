@@ -53,6 +53,7 @@ class ProductManager {
     deleteAll = () => {
         console.log("productManager.deleteAll")
         this.products = []
+        return this.products
     }
 
 }
