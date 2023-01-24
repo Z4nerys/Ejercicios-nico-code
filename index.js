@@ -1,3 +1,4 @@
+
 const consigna1 = () => {
     /*
     consgina 
@@ -15,7 +16,7 @@ const consigna1 = () => {
 ⦁	Se llamará al método “addProduct” con los mismos campos de arriba, debe arrojar un error porque el código estará repetido.
 ⦁	Se evaluará que getProductById devuelva error si no encuentra el producto o el producto en caso de encontrarlo
     */
-    //imports
+   //imports
     const ProductManager = require("./consigna1/src/product-manager")
     const generarUuid = require("./consigna1/helpers/uuid")
     
@@ -28,13 +29,13 @@ const consigna1 = () => {
     console.log("Starting proyect...")
     console.log("Primer consigna: getProducts\n")
     console.log(productManager.getProducts())
-
+    
     //consigna 2
     console.log("\n================================================================================")
     console.log("================================================================================\n")
     console.log("Segunda consigna: addProduct\n")
     console.log(productManager.addProduct(id, "producto prueba", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
-
+    
     //consigna 3
     console.log("\n================================================================================")
     console.log("================================================================================\n")
@@ -54,5 +55,23 @@ const consigna1 = () => {
     console.log(productManager.getProductById(id))
 }
 
-consigna1()
+//consigna1()
 
+const consigna2 = () => {
+    const ProductManager = require("./consigna2/product-manager")
+    
+    const productManager = new ProductManager()
+    console.log(productManager.addProduct("producto prueba", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
+    console.log(productManager.addProduct("producto pruebo", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
+    console.log(productManager.addProduct("producto pruebe", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
+    console.log(productManager.getProducts())
+    console.log(productManager.getProductById('aa24f5f9-d578-48c6-9fcf-cd9f4898f3da'))
+    console.log(productManager.updateProduct("aa24f5f9-d578-48c6-9fcf-cd9f4898f3da", "producto prueba", "este es un producto prueba", 600, "Sin imagen", "abc123", 25))
+    console.log("=======================")
+    console.log("=======================")
+    console.log("=======================")
+    console.log(productManager.getProducts())
+
+}
+
+consigna2()
