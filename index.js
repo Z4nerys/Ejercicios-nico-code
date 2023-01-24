@@ -59,8 +59,14 @@ const consigna1 = () => {
 
 const consigna2 = () => {
     const ProductManager = require("./consigna2/product-manager")
-    
+    const { guardarArchivo, readFile } = require("./consigna2/helpers/guardar-archivo")
     const productManager = new ProductManager()
+
+    //inicializar la creacion de archivo txt
+    const path = "C:/Users/gaston.fleitas/Desktop/Gasty/node/Ejercicios-nico-code/consigna2/data.txt"
+    readFile(path)
+    guardarArchivo(path, [])
+    readFile(path)
     //añadir productos
     console.log(productManager.addProduct("producto prueba", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
     console.log(productManager.addProduct("producto pruebo", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
@@ -75,8 +81,7 @@ const consigna2 = () => {
     console.log("=======================")
     console.log(productManager.getProducts())
     console.log(productManager.deleteOneProduct("aa24f5f9-d578-48c6-9fcf-cd9f4898f3da"))
-    console.log(productManager.getProducts())
-
+    console.log(productManager.getProducts()) 
 }
 
 consigna2()
