@@ -61,15 +61,20 @@ const consigna2 = () => {
     const ProductManager = require("./consigna2/product-manager")
     
     const productManager = new ProductManager()
+    //añadir productos
     console.log(productManager.addProduct("producto prueba", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
     console.log(productManager.addProduct("producto pruebo", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
     console.log(productManager.addProduct("producto pruebe", "este es un producto prueba", 200, "Sin imagen", "abc123", 25))
+
+    //obtener productos
     console.log(productManager.getProducts())
     console.log(productManager.getProductById('aa24f5f9-d578-48c6-9fcf-cd9f4898f3da'))
     console.log(productManager.updateProduct("aa24f5f9-d578-48c6-9fcf-cd9f4898f3da", "producto prueba", "este es un producto prueba", 600, "Sin imagen", "abc123", 25))
     console.log("=======================")
     console.log("=======================")
     console.log("=======================")
+    console.log(productManager.getProducts())
+    console.log(productManager.deleteOneProduct("aa24f5f9-d578-48c6-9fcf-cd9f4898f3da"))
     console.log(productManager.getProducts())
 
 }

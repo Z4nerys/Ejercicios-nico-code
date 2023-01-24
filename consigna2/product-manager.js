@@ -4,9 +4,12 @@ class ProductManager {
     
     constructor() {
         this.products = []
+        this.path = "C:\Users\gaston."
     }
     
     getProducts() {
+        console.log("ProductManager.getProducts")
+        console.log(this.path)
         return this.products
     }
 
@@ -28,10 +31,9 @@ class ProductManager {
 
     updateProduct = (id, title, description, price, thumbnail, code, stock) => {
         console.log("\nProductManager.updateProduct with id product : " + id)
-        id = "producto pruebo"
         let indice = false
         this.products.forEach( (product, index) => {
-            if(product[1] === id){
+            if(product[0] === id){
                 indice = index
             }
         } )
@@ -40,7 +42,17 @@ class ProductManager {
         this.products[indice] = [id, title, description, price, thumbnail, code, stock]
         console.log("Producto actualizado with value: ")
         return this.products[indice]
-        
+    }
+
+    deleteOneProduct = ( id ) => {
+        console.log("productManager.deleteOneProduct with id " + id)
+        this.products = this.products.filter( product => product[0] !== id)
+        return this.products
+    }
+
+    deleteAll = () => {
+        console.log("productManager.deleteAll")
+        this.products = []
     }
 
 }
